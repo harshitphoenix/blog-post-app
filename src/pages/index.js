@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,Switch } from "react-router-dom";
 import AddPost from "../component/AddPost";
+import BlogDetail from "../component/BlogDetail";
 import BlogLists from "../component/BlogList";
 /**
  *  Return the Main application with all the routes and pages
  */
 const Main = () => {
   <Router>
-    <Routes>
-      <Route exact path='/' element={<AddPost />} />
-      <Route exact path='/edit' element={<AddPost />} />
-      <Route exact path='/detail' element={<AddPost />} />
-      <Route exact path='/new' element={<AddPost />} />
-    </Routes>
+   <Switch>
+       <Route exact path={'/'} component={BlogLists}/>
+       <Route exact path={'/details/:id'} component={BlogDetail}/>
+       <Route exact path={'/new-post'} component={AddPost}/>
+       <Route exact path={'/edit/:id'} component={AddPost}/>
+   </Switch>
   </Router>;
 };
 

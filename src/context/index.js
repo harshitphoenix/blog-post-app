@@ -9,7 +9,7 @@ export const ContextProvider = createContext();
 export const Context = (props) => {
   const [blogs, setBlogs] = useState([...mockData]);
   return (
-    <ContextProvider.Provider value={{ blogs }}>
+    <ContextProvider.Provider value={{ blogs, setBlogs }}>
       {props.children}
     </ContextProvider.Provider>
   );
