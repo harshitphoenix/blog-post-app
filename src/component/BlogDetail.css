@@ -1,0 +1,83 @@
+.App {
+    text-align: center;
+  }
+  body,html {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .blog-container{
+    background-color: rgb(255, 255, 255) ;
+  }
+  .header{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 6vh;
+    padding: 1vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .content{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+  }
+  .post{
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+    height: fit-content;
+    margin: 1vh;
+    border-radius: 10px;
+    text-align: justify;
+    padding: 3vh;
+  }
+  .right-content{
+    /* right: 0%; */
+    float: right;
+  }
+  .left-content{
+    /* left: 0%; */
+    float: left;
+    font-size: 16px;
+  }
+  .btn{
+      border: none;
+      color: white;
+      padding: 13px 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 5%;
+      margin-left: 10px;
+      margin-bottom: 10px;
+  }
+  .like{
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5%;
+  }
+  .edit{
+    background-color: #2196F3;
+    color: white;
+    border-radius: 5%;
+  }
+  .delete{
+    background-color: #f44336;
+    color: white;
+    border-radius: 5%;
+  }
+  .btn:hover{
+      background-color: #555555;
+      color: white;
+  }
+  h1{
+    text-align: center;
+  }
