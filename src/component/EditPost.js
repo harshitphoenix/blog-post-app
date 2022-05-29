@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../context";
+import {useParams, useHistory} from 'react-router-dom'
 import "./AddPost.css";
 
-function AddPost() {
+const  AddPost=()=> {
+    const {id }= useParams();
   const [data, setData] = useState({});
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
+  
   const { setBlogs, blogs } = useContext(ContextProvider);
+  const [blog, setBlog]= useState(blogs[id])
   const onchange = (e) => {
     setData({
       ...data,
@@ -18,6 +24,7 @@ function AddPost() {
 
   const onSubmit = () => {
     setBlogs([...blogs, data]);
+    
   };
   return (
     <div className='main-add-post'>
@@ -35,6 +42,8 @@ function AddPost() {
                 autoComplete='off'
                 name='title'
                 id='title'
+                value={data.title||blog.title||""}
+                placeholder={blog.title}
                 onChange={onchange}
               />
             </div>
@@ -61,7 +70,7 @@ function AddPost() {
           </form>
           <div className='addPost-cancel-buttons'>
             <button className='submit-form' onClick={onSubmit}>
-              Submit
+              Save
             </button>
             <button className='cancel-form'>Cancel</button>
           </div>

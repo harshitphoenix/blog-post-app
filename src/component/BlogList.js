@@ -1,22 +1,22 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory, } from "react-router-dom";
 import { ContextProvider } from "../context";
 // import { useHistory } from "react-router-dom";
 import "./Bloglist.css";
 
 const BlogLists = () => {
   const { blogs, setBlogs } = useContext(ContextProvider);
-  //   const navigate = useNavigate()
+  const history = useHistory()
   useEffect(() => {
     console.log(blogs);
     console.log(blogs);
   }, [blogs]);
-  const deletePost = (i) => {
-    const tempArray = [...blogs];
-    console.log(i,'$$$')
-    tempArray.splice(i, 1)// remove required blog post from array
-    setBlogs(tempArray); // assign the changed array as new state
-  };
+ 
+
+  const redirectToDetails=(id)=>{
+    history.push(`/details/${id}`);
+    window.location.reload()
+  }
   return (
     <div className='main'>
       <div className='top'>
@@ -26,11 +26,11 @@ const BlogLists = () => {
       </div>
       <div className='bottom'>
         {blogs.map((list, index) => (
-          // <Link to="/">
-          <button className='list' onClick={() => deletePost(index)}>
+          // <Link to={`/details/${index}`}>
+          <button className='list' onClick={() => redirectToDetails(index)}>
             {list.title}
           </button>
-          //   </Link>
+        // </Link>
         ))}
       </div>
     </div>
